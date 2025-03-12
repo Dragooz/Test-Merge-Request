@@ -56,3 +56,9 @@ Hence conclusion is:
 1. From "feature-branch" to "develop", it's better to use Squash and Merge.
 2. From "develop" to "main", it's better to use create a merge request (+1 commit).
 3. From "hotfix-branch" to "main", it's better to use create a merge request (+1 commit).
+
+Note:
+
+1. Restriction of feature to dev > only squash and merge (can set via branch rule)
+2. Restriction of dev to main > only normal merge is allowed. (can set via branch rule)
+3. Then everything will be clean.
