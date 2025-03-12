@@ -4,3 +4,7 @@ def commit_G():
 
 def commit_G1():
     pass
+
+
+def commit_G2():
+    pass
