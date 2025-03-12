@@ -65,6 +65,8 @@ I'll update what I did step by step, and what's the result.
 47. Now I raise PR from "develop" to "main", use rebase and merge
 48. I see all the latest commits in "develop" are on top of "main"
 49. When I try to merge from "develop" to "main", it conflicted.
+50. Then I have to merge from "main" to "develop", resolve the conflicts, run git merge --continue, then re-raise the PR
+51. Then I can reate a merge request (+1 commit) and merge
 
 Hence conclusion is:
 
@@ -75,5 +77,5 @@ Hence conclusion is:
 Note:
 
 1. Restriction of feature to dev > only squash and merge (can set via branch rule)
-2. Restriction of dev to main > only normal merge is allowed. (can set via branch rule)
+2. Restriction of dev to main > only create a merge request (+1 commit) || normal merge is allowed. (can set via branch rule)
 3. Then everything will be clean.
