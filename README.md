@@ -51,9 +51,24 @@ I'll update what I did step by step, and what's the result.
 38. After normal merge, got +1 commit in "main", and commit in F only (E is gone due to matching commit hash)
 39. When I re-raised PR from "develop" to "main", the Commit & File Changes is empty.
 
+---
+
+40. Let's test "rebase and merge"
+41. Create a branch from "develop" to "develop-feature-G"
+42. Make 2 commits G in develop-feature-G branch
+43. Create a branch from "develop" to "develop-feature-H"
+44. Make 2 commits H in develop-feature-H branch
+
+45. PR from "develop-feature-G" to "develop", Squash and Merge
+46. PR from "develop-feature-H" to "develop", Squash and Merge
+
+47. Now I raise PR from "develop" to "main", use rebase and merge
+48. I see all the latest commits in "develop" are on top of "main"
+49. When I try to merge from "develop" to "main", it conflicted.
+
 Hence conclusion is:
 
-1. From "feature-branch" to "develop", it's better to use Squash and Merge.
+1. From "feature-branch" to "develop", it's better to use Squash and Merge (cleaning Dev) OR Rebase and Merge (Have clear steps in Git History).
 2. From "develop" to "main", it's better to use create a merge request (+1 commit).
 3. From "hotfix-branch" to "main", it's better to use create a merge request (+1 commit).
 
