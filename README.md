@@ -1,2 +1,7 @@
 # Test-Merge-Request
-To test the behavior of merge 
+
+I'll update what I did step by step, and what's the result.
+
+1. Create a branch from "main" to "develop"
+2. Create a branch from "develop" to "develop-feature-A"
+3. Make commit A
