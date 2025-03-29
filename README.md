@@ -79,3 +79,23 @@ Note:
 1. Restriction of feature to dev > only squash and merge (can set via branch rule)
 2. Restriction of dev to main > only create a merge request (+1 commit) || normal merge is allowed. (can set via branch rule)
 3. Then everything will be clean.
+
+## 29/03/2025 - Test on hotfix and see merge behavior
+
+1. Main have +1 commit compared to develop, and they are synced.
+2. I created update on commit B, C, D to Develop
+3. Note that I'm going to hotfix C into Main. C in Develop now have hash 457dd772d0adbd0f5a813942bdb70846668aba23.
+4. To follow production practice, we will always have to member to review first, before merging to Main.
+5. Hence, I'll create a hotfix branch from main, cherry pick from develop via hash, and raise PR to main.
+   a. Created hotfix/c-feature, cherry picked from Develop, raised PR.
+   b. Now note that the exact name commit C, have different hash in prod bea3b32cae8943efb01feb2ad0ea5289d2b5850f.
+6. Okay, now let's try to deploy from develop to main.
+   a. No conflict, but feature C is displaying the changes.
+7. Now, Let's try merge from main to develop, to sync both branch
+   a. After this change, feature C is not longer been displayed on the PR from develop to main.
+8. Now, Let's say feature C got bug, and another hotfix is required, while there's new commit E to Develop.
+9. Step 5 is repeated, and now main have +1 hotfix commit.
+10. Say this time, instead of syncing with dev, we continue code in Develop, and realize that feature C need another hotfix.
+11. And then hotfix to deploy to main again, and create PR and merge again.
+12. So now everything is fine.
+13. What if the next hotfix of C, plan to be deploy together with the rest? Let's try
